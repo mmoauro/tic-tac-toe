@@ -8,8 +8,11 @@ class Player:
     def chooseNumber (self, numbers: list):
         number = 0
         while not number in numbers:
-            print("")
-            number = int (input (f"{self.name} turns (enter a free board number):  "))
+            try:
+                number = int (input (f"{self.name} turns (enter a free board number):  "))
+            except:
+                return self.chooseNumber(numbers)
+                
         self.addChoosenNumber(number)
         return number
     
