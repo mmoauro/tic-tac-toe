@@ -1,10 +1,11 @@
 import Board as board
 import Player as player
+import Computer as computer
 class Game:
     def __init__ (self, j1Name: str, j2Name: str, j1Print: str, j2Print: str):
         self.board = board.Board()
         self.j1 = player.Player(j1Name, j1Print)
-        self.j2 = player.Player(j2Name, j2Print)
+        self.j2 = computer.Computer(j2Name, j2Print)
         self.winningLines = [
             [1,2,3],
             [4,5,6],
@@ -12,7 +13,8 @@ class Game:
             [1,5,9],
             [3,5,7],
             [1,4,7],
-            [3,6,9]
+            [3,6,9],
+            [2,5,8]
         ]
     
     def play (self):
